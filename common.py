@@ -135,7 +135,6 @@ class Net_block(nn.Module):
         self.rrdb_3=RRDB()
         self.rrdb_4=RRDB()
         self.rrdb_5=RRDB()
-        self.rrdb_6=RRDB()
         self.end1=nn.Conv2d(64, 64, (3, 3), (1, 1), (1, 1))
         self.end2=nn.Conv2d(64, 128, (3, 3), (1, 1), (1, 1))
         self.end3=nn.Conv2d(128, 64, (3, 3), (1, 1), (1, 1))
@@ -151,7 +150,6 @@ class Net_block(nn.Module):
         x=self.rrdb_3(x)
         x=self.rrdb_4(x)
         x=self.rrdb_5(x)
-        x=self.rrdb_6(x)
         x=self.end1(x)
         x+=keep
         x=self.lrelu(self.end2(x))
